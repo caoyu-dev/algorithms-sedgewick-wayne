@@ -1,2 +1,4 @@
-package algorithms_1_2;public class example16 {
+package algorithms_1_2;
+
+public class example16 {
 }
