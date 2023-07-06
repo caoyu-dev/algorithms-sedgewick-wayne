@@ -34,26 +34,11 @@ public class LinkedList<E> implements List<E> {
 
         // addFirst
         if (index == 0) {
-            Node<E> first = new Node<>(value);
-            first.next = head;
-            head = first;
-            size++;
-
-            if (head.next == null) {
-                tail = head;
-            }
+            addFirst(value);
         }
         // addLast
         else if (index == size) {
-            Node<E> last = new Node<>(value);
-            if (tail != null) {
-                tail.next = last;
-            }
-            tail = last;
-            if (head == null) {
-                head = tail;
-            }
-            size++;
+            addLast(value);
         }
         // add
         else {
@@ -67,6 +52,29 @@ public class LinkedList<E> implements List<E> {
         }
     }
 
+    private void addLast(E value) {
+        Node<E> last = new Node<>(value);
+        if (tail != null) {
+            tail.next = last;
+        }
+        tail = last;
+        if (head == null) {
+            head = tail;
+        }
+        size++;
+    }
+
+    private void addFirst(E value) {
+        Node<E> first = new Node<>(value);
+        first.next = head;
+        head = first;
+        size++;
+
+        if (head.next == null) {
+            tail = head;
+        }
+    }
+
     @Override
     public E remove(int index) {
         if (index < 0 || index > size) {
@@ -74,27 +82,7 @@ public class LinkedList<E> implements List<E> {
         }
 
         if (index == 0) {
-            Node<E> first = head;
-
-            if (first == null) {
-                throw new NoSuchElementException();
-            }
-
-            E element = first.data;
-
-            Node<E> nextNode = head.next;
-
-            first.data = null;
-            first.next = null;
-
-            head = nextNode;
-            size--;
-
-            if (size == 0) {
-                tail = null;
-            }
-
-            return element;
+            return removeFirst();
         }
 
         Node<E> prevNode = search(index - 1);
@@ -111,6 +99,30 @@ public class LinkedList<E> implements List<E> {
 
         if (prevNode.next == null) {
             tail = prevNode;
+        }
+
+        return element;
+    }
+
+    private E removeFirst() {
+        Node<E> first = head;
+
+        if (first == null) {
+            throw new NoSuchElementException();
+        }
+
+        E element = first.data;
+
+        Node<E> nextNode = head.next;
+
+        first.data = null;
+        first.next = null;
+
+        head = nextNode;
+        size--;
+
+        if (size == 0) {
+            tail = null;
         }
 
         return element;
