@@ -1,0 +1,206 @@
+2.1.4 알고리즘 2.2 의 동작 과정 설명에서 보여진 것과 같은 방식으로 삽입 정렬의 동작 과정을 보여라.
+이때 입력값은 "E A S Y Q U E S T I O N" 배열로 한다.
+
+2.1.4
+		a[]
+i    j  0 1 2 3 4 5 6 7 8 9 10 11
+	    E A S Y Q U E S T I  O  N
+0   -1  E A S Y Q U E S T I  O  N
+
+
+
+
+0 :
+i : 0, j : -1
+E
+A
+S
+Y
+Q
+U
+E
+S
+T
+I
+O
+N
+
+1 :
+i : 1, j : 1
+A
+E
+S
+Y
+Q
+U
+E
+S
+T
+I
+O
+N
+
+2 :
+i : 2, j : -1
+A
+E
+S
+Y
+Q
+U
+E
+S
+T
+I
+O
+N
+
+3 :
+i : 3, j : -1
+A
+E
+S
+Y
+Q
+U
+E
+S
+T
+I
+O
+N
+
+4 :
+i : 4, j : 3
+A
+E
+Q
+S
+Y
+U
+E
+S
+T
+I
+O
+N
+
+5 :
+i : 5, j : 5
+A
+E
+Q
+S
+U
+Y
+E
+S
+T
+I
+O
+N
+
+6 :
+i : 6, j : 3
+A
+E
+E
+Q
+S
+U
+Y
+S
+T
+I
+O
+N
+
+7 :
+i : 7, j : 6
+A
+E
+E
+Q
+S
+S
+U
+Y
+T
+I
+O
+N
+
+8 :
+i : 8, j : 7
+A
+E
+E
+Q
+S
+S
+T
+U
+Y
+I
+O
+N
+
+9 :
+i : 9, j : 4
+A
+E
+E
+I
+Q
+S
+S
+T
+U
+Y
+O
+N
+
+10 :
+i : 10, j : 5
+A
+E
+E
+I
+O
+Q
+S
+S
+T
+U
+Y
+N
+
+11 :
+i : 11, j : 5
+A
+E
+E
+I
+N
+O
+Q
+S
+S
+T
+U
+Y
+
+A
+E
+E
+I
+N
+O
+Q
+S
+S
+T
+U
+Y
+
+Process finished with exit code 0
